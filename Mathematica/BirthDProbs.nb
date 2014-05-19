@@ -1,0 +1,113 @@
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Birthday", " ", 
+    RowBox[{"problem", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "This", " ", "code", " ", "calculates", " ", "the", " ", "theoretical", 
+     " ", "probabilities", " ", "of", " ", "at", " ", "least", " ", "one", 
+     " ", "shared", " ", "birthday", " ", "in", " ", "a", " ", "group", " ", 
+     "of", " ", "n", " ", 
+     RowBox[{"people", ".", " ", "The"}], " ", "formula", " ", "used", " ", 
+     "is", "  ", "\[IndentingNewLine]", Cell[TextData[{
+      "P(shared birthday in a group of n people)=",
+      Cell[BoxData[
+       FormBox[
+        FractionBox[
+         RowBox[{"365", "!"}], 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"365", "-", "n"}], ")"}], "!"}], "*", 
+          SuperscriptBox["365", "n"]}]], TraditionalForm]]]
+     }]], Cell["\<\
+
+\
+\>"], "\[IndentingNewLine]", "which", " ", "was", " ", "retrieved", " ", 
+     "from", "\[IndentingNewLine]", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"en", ".", "wikipedia", ".", "org"}], "/", "wiki"}], "/", 
+     "Birthday_problem"}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Beginning", " ", "of", " ", "notebook", " ", "content"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.609033997294738*^9, 3.609034054677741*^9}, {
+  3.609034116310535*^9, 3.609034201979539*^9}, {3.609034233951013*^9, 
+  3.609034265212912*^9}, {3.609034523162301*^9, 3.609034636119969*^9}, {
+  3.6090349579154367`*^9, 3.609034961516266*^9}, {3.609035010547749*^9, 
+  3.609035038911148*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Get", " ", "working", " ", "directory"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Directory", "[", "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Calculate", " ", "theoretical", " ", "probabilities", " ", "of", " ", 
+     "a", " ", "shared", " ", "birthday", " ", "in", " ", "a", " ", "group", 
+     " ", "of", " ", "n", " ", "people"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"probs", "=", 
+    RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"n", "=", "1"}], ",", 
+     RowBox[{"n", "<", "96"}], ",", 
+     RowBox[{"n", "++"}], ",", 
+     RowBox[{"probs", "=", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"probs", ",", 
+        RowBox[{"N", "[", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"365", "!"}], "/", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"365", "-", "n"}], ")"}], "!"}], ")"}]}], ")"}], "/", 
+           
+           RowBox[{"365", "^", "n"}]}]}], "]"}]}], "]"}]}]}], "]"}], 
+   "\[IndentingNewLine]", "probs", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Export", " ", "file", " ", "to", " ", "a", " ", "desired", " ", 
+     "directory"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+    "\"\</Users/Koba/Desktop/DataScience/Birthday Problem/BDprobsTheory.csv\>\
+\"", ",", "probs"}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.609031970032662*^9, 3.6090320143108883`*^9}, {
+   3.609032088293837*^9, 3.609032102340159*^9}, {3.6090321611874027`*^9, 
+   3.609032195476386*^9}, {3.6090323376054773`*^9, 3.6090323541260347`*^9}, {
+   3.6090324246635313`*^9, 3.609032434103518*^9}, {3.609032473365987*^9, 
+   3.6090325431433353`*^9}, {3.609032606905629*^9, 3.6090326184723377`*^9}, {
+   3.609032650628104*^9, 3.609032728513063*^9}, {3.609032802664296*^9, 
+   3.6090328181793547`*^9}, {3.609032923878078*^9, 3.6090329399774933`*^9}, {
+   3.6090329811385107`*^9, 3.609033056400173*^9}, {3.609033088200066*^9, 
+   3.609033093599275*^9}, {3.609033134110176*^9, 3.6090331443543262`*^9}, {
+   3.6090333529007874`*^9, 3.609033401520487*^9}, {3.6090334363567963`*^9, 
+   3.609033502968369*^9}, {3.609033534598728*^9, 3.609033614752857*^9}, {
+   3.6090336523360367`*^9, 3.609033676436599*^9}, {3.6090337195325747`*^9, 
+   3.609033829218731*^9}, {3.609033886786838*^9, 3.609033995091029*^9}, 
+   3.609035049403904*^9, {3.6090799772971077`*^9, 3.6090799893020277`*^9}}]
+},
+WindowSize->{740, 652},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+TrackCellChangeTimes->False,
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) (November 6, 2010)",
+StyleDefinitions->"Default.nb"
+]
+
