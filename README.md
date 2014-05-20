@@ -23,4 +23,4 @@ For example, `bdayProbs(60,25)` will return a dataframe of probabilities of a sh
 The simulated probabilites for 25, 100, and 1000 trials as well as theoretical probabilities are in a graph below.
 ![bdayprobs graph](https://raw.githubusercontent.com/KobaKhit/Bday-Problem-in-R/master/R%20output/SharedBdayProbs.png)
 
- 
+ We can see that the simulated probabilities approach the theorietical probabilties as the number of trials is increased.
