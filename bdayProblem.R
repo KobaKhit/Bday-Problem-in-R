@@ -51,6 +51,8 @@ bdayProbs<-function(numberOfPeople=60,numberOfTrials=25){
 }
 #-----------------------------------------------------------------
 
+#-----------Simulation--------------------------------------------
+
 #Create a dataframe with shared birthday probabilities for groups of all sizes 
 #up to 70 using 25,100, and 1000 trials
 birthdayProbs<-data.frame(`25trials`=bdayProbs(70,25)[,"SharedBdayProb"],
@@ -58,8 +60,24 @@ birthdayProbs<-data.frame(`25trials`=bdayProbs(70,25)[,"SharedBdayProb"],
                       `1000trials`=bdayProbs(70,1000)[,"SharedBdayProb"])
 
 #Add theoretical probabilities computed in Mathematica for groups of all sizes up to 95 people
-theory<-read.csv("BDprobsTheory.csv",header=FALSE,sep=",")
+theory<-read.csv("Mathematica/BDprobsTheory.csv",header=FALSE,sep=",")
 birthdayProbs<-data.frame(birthdayProbs,theory=theory[1:nrow(birthdayProbs),])
+
+#Plot the theoretical bday probs
+with(birthdayProbs,
+{
+  plot(theory,
+       pch=16,
+       col="red",
+       main="Birthday Problem",
+       xlab="Number of people",
+       ylab="Probability of at least one shared birthday")
+  abline(h=0.5,v=23,lty=2)
+})
+#Save the plot to a png file
+dir.create("R output")
+dev.copy(png,"R output/TheoryBdayProbs.png",units="px",height=530,width=530)
+dev.off()
 
 #Plot the theoretical shared birthday probabilities and probabilities for 25,100, 1000 trials
 with(birthdayProbs,
@@ -83,7 +101,6 @@ with(birthdayProbs,
  })
 
 #Save the plot to a png file
-dir.create("R output")
 dev.copy(png,"R output/SharedBdayProbs.png",units="px",height=530,width=530)
 dev.off()
 
