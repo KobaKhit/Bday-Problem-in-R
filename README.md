@@ -18,9 +18,9 @@ I run the simulation and analysis in `bdayProblem.R` script. The function `bdayP
 - number of people
 - number of trials
 
-For example, `bdayProbs(60,25)` will return a dataframe of probabilities of a shared birthday in group of all sizes up to 60 people. The group of each size will be drawn 25 times. The function will calculate how many times a group had a shared birthday out of those 25 times. Then, the probability of a shared birthday will be the number of times a group had a shared birthday divided by the number of trials that is by 25. 
+For example, `bdayProbs(60,25)` will return a dataframe of probabilities of a shared birthday in group of all sizes up to 60 people. The group of each size will be drawn 25 times. The function will record each time a group had a shared birthday, and then divided this number by the number of trials that is by 25. 
 
 The simulated probabilites for 25, 100, and 1000 trials as well as theoretical probabilities are in a graph below.
 ![bdayprobs graph](https://raw.githubusercontent.com/KobaKhit/Bday-Problem-in-R/master/R%20output/SharedBdayProbs.png)
 
- We can see that the simulated probabilities approach the theorietical probabilties as the number of trials is increased.
+ We can see that the simulated probabilities approach the theorietical probabilties as the number of trials is increased and theory is backed up by the simulation.
