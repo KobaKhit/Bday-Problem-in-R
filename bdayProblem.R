@@ -104,7 +104,7 @@ with(birthdayProbs,
 dev.copy(png,"R output/SharedBdayProbs.png",units="px",height=530,width=530)
 dev.off()
 
-#Calculate the mean error by the number of trials
+#Calculate the mean error by the number of trial s
 k<-100 #number of trials
 n<-60 #number of people in a group
 error<-vector()
