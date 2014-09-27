@@ -21,6 +21,7 @@ I run the simulation and analysis in `bdayProblem.R` script. The function `bdayP
 For example, `bdayProbs(60,25)` will return a dataframe of probabilities of a shared birthday in group of all sizes up to 60 people. The group of each size will be drawn 25 times. The function will record each time a group had a shared birthday, and then divide the number of times a group had a shared birthday by the number of trials that is by 25. In other words, we get a fraction of times the group had a shared birthday which is in essence the probability of a shared birthday in a group.
 
 The simulated probabilites for 25, 100, and 1000 trials as well as theoretical probabilities are in a graph below.
+
 ![bdayprobs graph](https://raw.githubusercontent.com/KobaKhit/Bday-Problem-in-R/master/R%20output/SharedBdayProbs.png)
 
  We can see that the simulated probabilities approach the theorietical probabilties as the number of trials is increasing.  Therefore, theory is backed up by the simulated data. So, in a class of sixty people (probably a lecture) there is 99.9% probability that at least two people share a birthday.
