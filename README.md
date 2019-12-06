@@ -1,7 +1,7 @@
-#Birthday problem simulation in R
+# Birthday problem simulation in R
 This is a project in which I run a simulation of the [birthday problem](http://en.wikipedia.org/wiki/Birthday_problem).
 
-##Brithday problem
+## Brithday problem
 > What is the probability that in a set of n randomly chosen people at least two will have the same birthday? 
 
 According to theory, the probability will be approximately 1 for a group of sixty people. A formula used to calculate the theoretical probabilities is 
@@ -13,7 +13,7 @@ The horizontal dashed line is drawn at a point 0.5 and the vertical dashed line 
 
 I calculated the theoretical probabilities in Mathematica. The Mathematica notebook and the csv file with theoritical probabilities are in the `Mathematica` folder.
 
-##Simulation
+## Simulation
 I run the simulation and analysis in `bdayProblem.R` script. The function `bdayProbs()` is the actual simulation. It takes two arguments: 
 - number of people
 - number of trials
