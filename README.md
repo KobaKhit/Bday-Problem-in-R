@@ -26,3 +26,5 @@ The simulated probabilites for 25, 100, and 1000 trials as well as theoretical p
 ![bdayprobs graph](https://raw.githubusercontent.com/KobaKhit/Bday-Problem-in-R/master/R%20output/SharedBdayProbs.png)
 
  We can see that the simulated probabilities approach the theorietical probabilties as the number of trials is increasing.  Therefore, theory is backed up by the simulated data. So, in a class of sixty people (probably a lecture) there is 99.9% probability that at least two people share a birthday.
+
+Another way to describe it (thanks Amit!): if there are 2 people in a room, there is a 364/365 odds they don't share a birthday. If there are 3 people in a room, there is a 363/365 odds they don't share a birthday. so you multiply each of those odds until you hit the percentage chance of two people sharing a birthday.
